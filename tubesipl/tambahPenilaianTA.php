@@ -38,28 +38,43 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <img src="Foto Home/unajni.png" width="50"> <br>
-                <div class="juduls"><a id="Unjani" class="navbar-brand" href="tampilPendaftarTA.php">⬅ Data Terdaftar TA</a></div>
+                <div class="juduls"><a id="Unjani" class="navbar-brand" href="tampilPenilaianTA.php">⬅ Nilai TA</a></div>
             </div>
         </nav>
         <fieldset>
-            <legend><h1>Pendaftaran TA</h1></legend>
+            <legend><h1>Penilaian TA</h1></legend>
                 <table>
-                    <form action="aksitambahPendaftarTA.php" method="post">
+                    <form action="aksitambahPenilaianTA.php" method="post">
+                    <tr>
+                        <td>Urutan Seminar</td>
+                        <td>:</td>
+                        <td><input type="number" name="noSeminar" placeholder="" required/></td>
+                    </tr>
                     <tr>
                         <td>NIM Mahasiswa</td>
                         <td>:</td>
-                        <td><input type="text" name="nimMhsw" placeholder="NIM Mahasiswa" size="52px" required/></td>
+                        <td><input type="text" name="nimMhsw" placeholder="NIM Mahasiswa" size="30px" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Nilai Pembimbing 1</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiPembimbing1" placeholder="Masukkan Nilai" size="52px" required/></td>
                     </tr>
                      <tr>
-                        <td>NID Dosen Pembimbing</td>
+                        <td>Nilai Pembimbing 2</td>
                         <td>:</td>
-                        <td><input type="text" name="nidDosen" placeholder="NID Dosen Pembimbing" size="52px" required/></td>
+                        <td><input type="number" name="nilaiPembimbing2" placeholder="Masukkan Nilai" size="52px" required/></td>
                     </tr>
-                     <tr>
-                        <td>Tanggal Pendaftaran</td>
+                    <tr>
+                        <td>Nilai Penguji</td>
                         <td>:</td>
-                        <td><input type="date" name="tglDaftar" placeholder="Tanggal Pendaftaran" required> </td>
+                        <td><input type="number" name="nilaiPenguji" placeholder="Masukkan Nilai" required></td>
                     </tr>  
+                    <tr>
+                        <td>Nilai Koordinator</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiKoordinator" placeholder="Masukkan Nilai" required></td>
+                    </tr> 
                     <tr>
                         <td><input type="submit" name="submit" value="Submit"/></td>
                         <td></td>

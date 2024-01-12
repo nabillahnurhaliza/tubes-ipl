@@ -9,10 +9,11 @@ echo "";
         <meta charset="utf-8">
         <title>Daftar Peserta TA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link href="css/styletampilan.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="icon" href="Foto Home/unajni.png">
-		<style>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <style>
 			body{
 				background-color: lightblue;
 			}
@@ -57,39 +58,31 @@ echo "";
 		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <img src="Foto Home/unajni.png" width="50"> <br>
                 <div class="juduls"><a id="Unjani" class="navbar-brand" href="home.html">⬅Back to Home</a></div>
             </div>
         </nav>
 		<center>
-		<h1>Daftar Peserta TA</h1>
+		<h1>Jadwal Seminar</h1>
 		<table border="3" cellpadding="8">
 			<tr>
-				<th>No. Pendaftaran</th>
-				<th>NIM Mahasiswa</th>
-				<th>NID Dosen Pembimbing</th>
-				<th>Tanggal Pendaftaran</th>
-				<th colspan='2'>Action</th>
+				<th>Nomor Seminar</th>
+				<th>Waktu Seminar</th>
 			</tr>
 			<?php
-				$query = "select * from pendaftaranta";
+				$query = "select * from jadwalseminar";
 				$data = mysqli_query($koneksi,$query) or
 				die("Gagal query:".$query);
 			?>
 			<?php while($v=mysqli_fetch_array($data)):;?>
 			<tr>
-				<td><?php echo $v["noDaftar"];?></td>
-				<td><?php echo $v["nimMhsw"];?></td>
-				<td><?php echo $v["nidDosen"];?></td>
-				<td><?php echo $v["tglDaftar"];?></td>
-				<td><a href="aksihapusPendaftarTA.php?noDaftar=<?php echo $v["noDaftar"];?>">Hapus</a></td>
-				<td><a href="updatePendaftarTA.php?noDaftar=<?php echo $v["noDaftar"];?>">Edit</a></td>
+				<td><?php echo $v["noSeminar"];?></td>
+				<td><?php echo $v["tglSeminar"];?></td>
 			</tr>
 			<?php endwhile;?>
 		</table>
-		<br><button><a href="tambahPendaftarTA.php">Tambah Data</a></button>
 	</center>
 	</body>
 </html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact</title>
+	<!-- Favicon-->
+	<link rel="icon" href="Foto Home/unajni.png">
+	<link rel="stylesheet" type="text/css" 
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link href="css/styles.css" rel="stylesheet" />
+	<style>
+		.juduls{
+                margin-left: 20px;
+            }
+		body{
+	padding: 0;
+	margin: 0;
+}
+.middle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	background-color: #f1f1f1;
+	margin: 10px;
+	border-radius: 50%;
+	box-shadow: 0 5px 15px -5px #00000070;
+	color: #3498db;
+	overflow: hidden;
+	position: relative;
+}
+
+.btn i {
+	line-height: 90px;
+	font-size: 36px;
+	transition: 0.2 linear;
+}
+.btn:hover i {
+	transform: scale(1.3);
+	color: #f1f1f1;
+}
+.btn::before{
+content: "";
+position: absolute;
+width: 120%;
+height: 120%;
+background-color: #3498db;
+transform: rotate(45deg);
+left: -110%;
+top: 90%;
+}
+.btn:hover::before{
+	animation: aaa 0.7s 1;
+	top: -10%;
+	left: -10%;
+}
+.youtube:hover::before{
+	background: red;
+}
+.facebook:hover::before{
+	background: #3b5999;
+}
+.instagram:hover::before{
+	background: #e4405f;
+}
+.whatsapp:hover::before {
+	background: green;
+}
+.envelope:hover::before{
+	background: maroon;
+}
+
+@keyframes aaa {
+	0%{
+		left: -110%;
+		top: 90%;
+	}
+	50%{
+		left: 10%;
+		top: -30%
+	}
+	100%{
+		top: -10%;
+		left: -10%;
+	}
+}
+	</style>
+	</style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+	</script>
+    
+</head>
+<body>
+	<!--nav-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container px-5">
+			<img src="Foto Home/unajni.png" width="50"> <br>
+			<div class="juduls"><a id="Unjani" class="navbar-brand" href="home.html">⬅Back to Home</a></div>
+		</div>
+	</nav>
+	<div class="middle">
+  		<h2>Social Media</h2> <br><br>
+		<a class="btn facebook" href="https://www.facebook.com/pages/UNJANI-Universitas-Jendral-Ahmad-Yani-Bandung-Jawa/135372046620892" target="_blank">
+			<i class="fab fa-facebook-f"></i>
+		</a>
+		<a class="btn whatsapp" href="https://wa.me/08112497890" target="_blank">
+			<i class="fab fa-whatsapp"></i>
+		</a>
+		<a class="btn instagram" href="https://www.instagram.com/pmbunjani/" target="_blank">
+			<i class="fab fa-instagram"></i>
+		</a>
+		<a class="btn youtube" href="https://www.youtube.com/@UNJANIOFFICIAL" target="_blank">
+			<i class="fab fa-youtube"></i>
+		</a>
+		<a class="btn envelope" href="mailto:humas@unjani.ac.id" target="_blank">
+			<i class="fab fa-envelope"></i>
+		</a>
+	</div>
+</body>
+</html>
+

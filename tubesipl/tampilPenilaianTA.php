@@ -57,39 +57,46 @@ echo "";
 		</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <img src="Foto Home/unajni.png" width="50"> <br>
                 <div class="juduls"><a id="Unjani" class="navbar-brand" href="home.html">⬅Back to Home</a></div>
             </div>
         </nav>
 		<center>
-		<h1>Daftar Peserta TA</h1>
+		<h1>Nilai TA</h1>
 		<table border="3" cellpadding="8">
 			<tr>
-				<th>No. Pendaftaran</th>
-				<th>NIM Mahasiswa</th>
-				<th>NID Dosen Pembimbing</th>
-				<th>Tanggal Pendaftaran</th>
+				<th>Nomor Seminar</th>
+                <th>NIM Mahasiswa</th>
+				<th>Nilai Pembimbing 1</th>
+				<th>Nilai Pembimbing 2</th>
+                <th>Nilai Penguji</th>
+                <th>Nilai Koordinator TA</th>
+                <th>Nilai Rata-Rata</th>
+                <th>Nilai Mutu</th>
 				<th colspan='2'>Action</th>
 			</tr>
 			<?php
-				$query = "select * from pendaftaranta";
+				$query = "select * from penilaianTA";
 				$data = mysqli_query($koneksi,$query) or
 				die("Gagal query:".$query);
 			?>
 			<?php while($v=mysqli_fetch_array($data)):;?>
 			<tr>
-				<td><?php echo $v["noDaftar"];?></td>
-				<td><?php echo $v["nimMhsw"];?></td>
-				<td><?php echo $v["nidDosen"];?></td>
-				<td><?php echo $v["tglDaftar"];?></td>
-				<td><a href="aksihapusPendaftarTA.php?noDaftar=<?php echo $v["noDaftar"];?>">Hapus</a></td>
-				<td><a href="updatePendaftarTA.php?noDaftar=<?php echo $v["noDaftar"];?>">Edit</a></td>
+				<td><?php echo $v["noSeminar"];?></td>
+                <td><?php echo $v["nimMhsw"];?></td>
+				<td><?php echo $v["nilaiPembimbing1"];?></td>
+				<td><?php echo $v["nilaiPembimbing2"];?></td>
+                <td><?php echo $v["nilaiPenguji"];?></td>
+                <td><?php echo $v["nilaiKoordinator"];?></td>
+                <td><?php echo $v["rerataNilai"];?></td>
+                <td><?php echo $v["mutuNilai"];?></td>
+				<td><a href="aksihapusPenilaianTA.php?kodeNilai=<?php echo $v["kodeNilai"];?>">Hapus</a></td>
+				<td><a href="updatePenilaianTA.php?kodeNilai=<?php echo $v["kodeNilai"];?>">Edit</a></td>
 			</tr>
 			<?php endwhile;?>
 		</table>
-		<br><button><a href="tambahPendaftarTA.php">Tambah Data</a></button>
 	</center>
 	</body>
 </html>

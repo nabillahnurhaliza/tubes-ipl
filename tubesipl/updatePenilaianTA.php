@@ -1,7 +1,7 @@
 <?php
 	$koneksi=mysqli_connect("localhost","root","","dbadministrasita") or die ("Gagal Koneksi Database");
-	$noDaftar=$_GET['noDaftar'];
-	$query="select * from pendaftaranta where noDaftar='$noDaftar'";
+	$kodeNilai=$_GET['kodeNilai'];
+	$query="select * from penilaianta where kodeNilai='$kodeNilai'";
 	$data=mysqli_query($koneksi,$query) or die ("Gagal Menampilkan".$query);
 	$sql=mysqli_fetch_array($data);
 ?>
@@ -46,33 +46,53 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <img src="Foto Home/unajni.png" width="50"> <br>
-                <div class="juduls"><a id="Unjani" class="navbar-brand" href="tampilPendaftarTA.php">⬅ Data Terdaftar TA</a></div>
+                <div class="juduls"><a id="Unjani" class="navbar-brand" href="tampilPenilaianTA.php">⬅ Nilai TA</a></div>
             </div>
         </nav>
         <fieldset>
-            <legend><h1>Ubah Data Pendaftar</h1></legend>
+            <legend><h1>Ubah Nilai</h1></legend>
                 <table>
-                    <form action="aksiupdatePendaftarTA.php" method="post">
+                    <form action="aksiupdatePenilaianTA.php" method="post">
                     <tr>
-                        <td>No. Pendaftaran</td>
+                        <td>Kode Nilai</td>
                         <td>:</td>
-                        <td><input type="text" name="noDaftar" readonly value="<?php echo $sql['noDaftar'];?>"/></td>
+                        <td><input type="text" name="kodeNilai" readonly value="<?php echo $sql['kodeNilai'];?>"/></td>
                     </tr>
                     <tr>
                         <td>NIM Mahasiswa</td>
                         <td>:</td>
-                        <td><input type="text" name="nimMhsw" value="<?php echo $sql['nimMhsw'];?>"/></td>
+                        <td><input type="text" name="nimMhsw" readonly value="<?php echo $sql['nimMhsw'];?>"/></td>
                     </tr>
                     <tr>
-                        <td>NID Dosen Pembimbing</td>
+                        <td>Nilai Rata-Rata</td>
                         <td>:</td>
-                        <td><input type="text" name="nidDosen" placeholder="NID Dosen Pembimbing" value="<?php echo $sql['nidDosen'];?>"/></td>
+                        <td><input type="text" name="rerataNilai" readonly value="<?php echo $sql['rerataNilai'];?>"/></td>
                     </tr>
-                     <tr>
-                        <td>Tanggal Pendaftaran</td>
+                    <tr>
+                        <td>Nilai Mutu</td>
                         <td>:</td>
-                        <td><input type="date" name="tglDaftar" placeholder="Tanggal Pendaftaran" value="<?php echo $sql['tglDaftar'];?>"></td>
-                    </tr>  
+                        <td><input type="text" name="mutuNilai" readonly value="<?php echo $sql['mutuNilai'];?>"/></td>
+                    </tr>
+                    <tr>
+                        <td>Nilai Pembimbing 1</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiPembimbing1" value="<?php echo $sql['nilaiPembimbing1'];?>"/></td>
+                    </tr>
+                    <tr>
+                        <td>Nilai Pembimbing 2</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiPembimbing2" value="<?php echo $sql['nilaiPembimbing2'];?>"/></td>
+                    </tr>
+                    <tr>
+                        <td>Nilai Penguji</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiPenguji" value="<?php echo $sql['nilaiPenguji'];?>"/></td>
+                    </tr>
+                    <tr>
+                        <td>Nilai Koordinator TA</td>
+                        <td>:</td>
+                        <td><input type="number" name="nilaiKoordinator" value="<?php echo $sql['nilaiKoordinator'];?>"/></td>
+                    </tr> 
                     <tr>
                         <td><input type="submit" name="submit" value="Submit"/></td>
                         <td></td>
